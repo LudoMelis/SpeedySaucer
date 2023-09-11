@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+var score = 0
 # Force is to be set at Mass*100
 var force = 10000
 
@@ -20,5 +21,7 @@ func _physics_process(delta):
 		apply_force(Vector2(0, -force))
 	if Input.is_action_pressed("Down"):
 		apply_force(Vector2(0, force))
-	
+
+	score += int((self.linear_velocity.length()/100)**2)
+	self.get_node("HUD/CanvasLayer/ScoreLabelData").text = str(score)
 

@@ -28,7 +28,6 @@ label_settings = SubResource("LabelSettings_qp34t")
 offset_top = 58.0
 offset_right = 191.0
 offset_bottom = 133.0
-text = "LIFES"
 label_settings = SubResource("LabelSettings_qp34t")
 
 [node name="ScoreLabelData" type="Label" parent="CanvasLayer"]
