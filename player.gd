@@ -1,10 +1,12 @@
 extends RigidBody2D
 
-var force = 1000
+# Force is to be set at Mass*100
+var force = 10000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Force set : " + str(force))
+	
 	
 func _process(delta):
 	pass

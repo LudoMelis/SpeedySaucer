@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://br6a67knlyfyy"]
+
+[sub_resource type="SystemFont" id="SystemFont_qpa7g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qp34t"]
+font = SubResource("SystemFont_qpa7g")
+font_size = 50
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_right = 191.0
+offset_bottom = 75.0
+text = "SCORE"
+label_settings = SubResource("LabelSettings_qp34t")
+
+[node name="LifesLabel" type="Label" parent="CanvasLayer"]
+offset_top = 58.0
+offset_right = 191.0
+offset_bottom = 133.0
+text = "LIFES"
+label_settings = SubResource("LabelSettings_qp34t")
+
+[node name="ScoreLabelData" type="Label" parent="CanvasLayer"]
+offset_left = 203.0
+offset_top = 3.0
+offset_right = 510.0
+offset_bottom = 78.0
+label_settings = SubResource("LabelSettings_qp34t")
+
+[node name="LifesLabelData" type="Label" parent="CanvasLayer"]
+offset_left = 203.0
+offset_top = 60.0
+offset_right = 510.0
+offset_bottom = 135.0
+label_settings = SubResource("LabelSettings_qp34t")

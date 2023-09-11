@@ -81,7 +81,38 @@ position = Vector2(578, 324)
 z_index = 1
 position = Vector2(104, 67)
 
-[node name="Obstacle" parent="." instance=ExtResource("5_k2po3")]
-position = Vector2(613, 754)
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Obstacle" parent="Obstacles" instance=ExtResource("5_k2po3")]
+position = Vector2(443, 592)
+scale = Vector2(0.760001, 1)
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource("5_k2po3")]
+position = Vector2(1156, 2910)
+rotation = 0.296508
+
+[node name="Obstacle3" parent="Obstacles" instance=ExtResource("5_k2po3")]
+position = Vector2(791, 2633)
+rotation = 1.05818
+
+[node name="Obstacle4" parent="Obstacles" instance=ExtResource("5_k2po3")]
+position = Vector2(3911, 2548)
+rotation = 1.33862
+
+[node name="Obstacle5" parent="Obstacles" instance=ExtResource("5_k2po3")]
+position = Vector2(3635, 2084)
+rotation = 0.308663
+
+[node name="Obstacle6" parent="Obstacles" instance=ExtResource("5_k2po3")]
+position = Vector2(3748, 191)
+rotation = 0.852991
+
+[node name="Obstacle7" parent="Obstacles" instance=ExtResource("5_k2po3")]
+position = Vector2(3380, -152)
+rotation = 0.7004
+
+[node name="Obstacle8" parent="Obstacles" instance=ExtResource("5_k2po3")]
+position = Vector2(2965, -318)
+rotation = -0.173574
 
 [connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
