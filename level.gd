@@ -7,5 +7,6 @@ func _ready():
 
 
 func _on_maze_body_exited(body):
-	print("Out")
-	get_tree().reload_current_scene()
+	print("ObjectOut")
+	if (body.name == "Player"):
+		get_tree().reload_current_scene()

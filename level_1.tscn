@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb7sxkl7usjbc"]
+[gd_scene load_steps=9 format=3 uid="uid://cb7sxkl7usjbc"]
 
 [ext_resource type="Texture2D" uid="uid://djciuyxgitco2" path="res://purple.png" id="1_ym40x"]
 [ext_resource type="Script" path="res://level.gd" id="1_yxglj"]
 [ext_resource type="PackedScene" uid="uid://blnbtnxsi056x" path="res://player.tscn" id="2_f24r4"]
 [ext_resource type="PackedScene" uid="uid://b6x5qsqvct04n" path="res://maze.tscn" id="4_g1sd3"]
+[ext_resource type="PackedScene" uid="uid://dm3537itlkm35" path="res://obstacle.tscn" id="5_k2po3"]
 
 [sub_resource type="SystemFont" id="SystemFont_akhql"]
 
@@ -79,5 +80,8 @@ position = Vector2(578, 324)
 [node name="Maze" parent="." instance=ExtResource("4_g1sd3")]
 z_index = 1
 position = Vector2(104, 67)
+
+[node name="Obstacle" parent="." instance=ExtResource("5_k2po3")]
+position = Vector2(613, 754)
 
 [connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
