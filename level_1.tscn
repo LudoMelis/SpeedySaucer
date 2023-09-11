@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://cb7sxkl7usjbc"]
+
+[ext_resource type="Texture2D" uid="uid://djciuyxgitco2" path="res://purple.png" id="1_ym40x"]
+[ext_resource type="Script" path="res://level.gd" id="1_yxglj"]
+[ext_resource type="PackedScene" uid="uid://blnbtnxsi056x" path="res://player.tscn" id="2_f24r4"]
+[ext_resource type="PackedScene" uid="uid://b6x5qsqvct04n" path="res://maze.tscn" id="4_g1sd3"]
+
+[sub_resource type="SystemFont" id="SystemFont_akhql"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dwaq8"]
+line_spacing = -15.0
+font = SubResource("SystemFont_akhql")
+font_size = 75
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ef01w"]
+line_spacing = -15.0
+font = SubResource("SystemFont_akhql")
+font_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_yxglj")
+
+[node name="Graphics" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Graphics"]
+layer = -100
+
+[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer"]
+z_index = -100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ym40x")
+stretch_mode = 1
+
+[node name="StartLabel" type="Label" parent="Graphics"]
+z_index = 1
+offset_left = 469.0
+offset_top = 126.0
+offset_right = 692.0
+offset_bottom = 229.0
+text = "START"
+label_settings = SubResource("LabelSettings_dwaq8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RulesLabel" type="Label" parent="Graphics"]
+z_index = 1
+offset_left = 692.0
+offset_top = 206.0
+offset_right = 840.0
+offset_bottom = 482.0
+text = "Move with the arrows.
+Make sure you stay on the path until the end."
+label_settings = SubResource("LabelSettings_ef01w")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="EndLabel" type="Label" parent="Graphics"]
+z_index = 1
+offset_left = 2494.0
+offset_top = 167.0
+offset_right = 2650.0
+offset_bottom = 270.0
+text = "END"
+label_settings = SubResource("LabelSettings_dwaq8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("2_f24r4")]
+z_index = 10
+position = Vector2(578, 324)
+
+[node name="Maze" parent="." instance=ExtResource("4_g1sd3")]
+z_index = 1
+position = Vector2(104, 67)
+
+[connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
