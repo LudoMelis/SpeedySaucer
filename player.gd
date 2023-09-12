@@ -14,13 +14,13 @@ func _process(delta):
 
 func _physics_process(delta):
 	if Input.is_action_pressed("Right"):
-		apply_force(Vector2(force, 0))
+		apply_force(Vector2(Input.get_axis("Left", "Right") * force, 0))
 	if Input.is_action_pressed("Left"):
-		apply_force(Vector2(-force, 0))
+		apply_force(Vector2(Input.get_axis("Left", "Right") * force, 0))
 	if Input.is_action_pressed("Up"):
-		apply_force(Vector2(0, -force))
+		apply_force(Vector2(0, Input.get_axis("Up", "Down") * force))
 	if Input.is_action_pressed("Down"):
-		apply_force(Vector2(0, force))
+		apply_force(Vector2(0, Input.get_axis("Up", "Down") * force))
 
 	score += int((self.linear_velocity.length()/100)**2)
 	self.get_node("HUD/CanvasLayer/ScoreLabelData").text = str(score)

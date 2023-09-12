@@ -11,3 +11,8 @@ polygon = PackedVector2Array(147, 1, 162, 649, 217, 1025, 28, 1550, 610, 2207, 4
 texture_repeat = 2
 texture = ExtResource("1_17xmo")
 polygon = PackedVector2Array(147, 1, 162, 649, 217, 1025, 28, 1550, 610, 2207, 466, 2701, 1221, 2966, 1795, 2852, 2607, 2841, 3268, 2992, 3921, 2713, 3785, 1995, 3313, 1901, 3592, 1369, 3279, 859, 3872, 270, 3268, -398, 2747, -572, 2362, -168, 2279, 376, 2682, 119, 3158, 172, 2773, 802, 2962, 1387, 2686, 1867, 3294, 2395, 2622, 2403, 1252, 2350, 821, 1610, 980, 1100, 829, 640, 844, 17)
+
+[node name="End" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="End"]
+polygon = PackedVector2Array(2361, -169, 2276, 360, 2683, 122)

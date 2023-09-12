@@ -116,5 +116,6 @@ position = Vector2(2965, -318)
 rotation = -0.173574
 
 [connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
+[connection signal="body_entered" from="Maze/End" to="." method="_on_end_body_entered"]
 
 [editable path="Maze"]

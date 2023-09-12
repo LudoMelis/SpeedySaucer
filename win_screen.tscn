@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt1uvxtgike6j"]
+
+[sub_resource type="SystemFont" id="SystemFont_sakuq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f8vvq"]
+font = SubResource("SystemFont_sakuq")
+font_size = 160
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[node name="WinScreen" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.5
+offset_top = -111.0
+offset_right = 329.5
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+text = "You win!"
+label_settings = SubResource("LabelSettings_f8vvq")

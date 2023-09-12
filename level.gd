@@ -18,3 +18,11 @@ func _on_maze_body_exited(body):
 		get_tree().reload_current_scene()
 
 
+
+
+func _on_end_body_entered(body):
+	print("End")
+	var winScene = load("res://win_screen.tscn")
+	var instance = winScene.instantiate()
+	add_child(instance)
+	
